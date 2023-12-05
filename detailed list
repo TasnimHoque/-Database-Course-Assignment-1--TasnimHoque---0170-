@@ -1,0 +1,5 @@
+SELECT Purchase.PurchaseID, Customer.Name AS CustomerName, Book.Title AS BookTitle, Purchase.PurchaseDate
+FROM Purchase
+JOIN Customer ON Purchase.CustomerID = Customer.CustomerID
+JOIN Book ON Purchase.BookID = Book.BookID
+WHERE Purchase.PurchaseDate >= '2023-01-01';
