@@ -1,0 +1,4 @@
+SELECT *
+FROM Author
+WHERE Name LIKE 'Mohammad%' OR Name LIKE 'MD%'
+ORDER BY Name;
