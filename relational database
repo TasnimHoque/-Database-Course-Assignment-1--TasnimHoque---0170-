@@ -1,0 +1,34 @@
+-- Book table
+CREATE TABLE Book (
+    BookID INT PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    PublishedDate DATE NOT NULL,
+    InStock BOOLEAN NOT NULL
+    -- Add other attributes as needed
+);
+
+-- Author table
+CREATE TABLE Author (
+    AuthorID INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL
+    -- Add other attributes as needed
+);
+
+-- Customer table
+CREATE TABLE Customer (
+    CustomerID INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL
+    -- Add other attributes as needed
+);
+
+-- Purchase table
+CREATE TABLE Purchase (
+    PurchaseID INT PRIMARY KEY,
+    CustomerID INT,
+    BookID INT,
+    PurchaseDate DATE NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+    FOREIGN KEY (BookID) REFERENCES Book(BookID)
+    -- Add other attributes as needed
+);
